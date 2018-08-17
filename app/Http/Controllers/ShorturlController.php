@@ -35,6 +35,8 @@ class ShorturlController extends Controller
 
 /*
  * Creates the hash for the short url
+ *
+ * @return base56 encode hash
  */
 	public function createUrlHash() {
 		$time = strtotime(now());
@@ -44,7 +46,10 @@ class ShorturlController extends Controller
 	}
 
 	/*
-	 *  Get URL validation and checks if URL exists
+	 * Get URL validation and checks if URL exists
+	 *
+	 * @param  string|null  $url
+	 * @@return mixed
 	 */
 	public function validateURL ($url) {
 		$error = [];
@@ -73,6 +78,9 @@ class ShorturlController extends Controller
 
 /*
  * Get URL from DB in order to check if already exists
+ *
+ * @param string $url
+ * @return mixed
  */
 	public function getUrl($url) {
 
@@ -86,6 +94,8 @@ class ShorturlController extends Controller
 
 	/*
 	 * Insert new row into the DB
+	 *
+	 * @param array $params
 	 */
 	public function insertUrl($params) {
 

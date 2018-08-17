@@ -14,8 +14,5 @@
 Route::get('wlecome', function () {
     return view('welcome');
 });
-
-
 Route::get('/', 'IndexController@index');
-
 Route::get('/{link}', 'RedirectController@index');

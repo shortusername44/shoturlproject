@@ -7,12 +7,7 @@ use App\Http\Controllers\Controller;
 
 class RedirectController extends Controller
 {
-	/**
-	 * Show the profile for the given user.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+
 	public function index()
 	{
 
@@ -36,6 +31,9 @@ class RedirectController extends Controller
 
 	/*
 	 * We check if the hash exists in our DB and we return the original Url or error if the hash is not registered
+	 *
+	 * @param string $hash
+	 * @return mixed
 	 */
 	public function checkIfHashExistsAndReturnUrl($hash) {
 
@@ -54,6 +52,9 @@ class RedirectController extends Controller
 
 	/*
 	 * We search the has into the DB
+	 *
+	 * @param string $hash
+	 * @return object $result
 	 */
 	public function getHash($hash) {
 
@@ -66,7 +67,10 @@ class RedirectController extends Controller
 	}
 
 	/*
-	 * Validates the hash before we make the search into DB
+	 * Validates the hash before the search into DB
+	 *
+	 * @param string $str
+	 * @return string $result
 	 */
 	public function validateHash($str) {
 		$str = str_replace(' ', '', $str);

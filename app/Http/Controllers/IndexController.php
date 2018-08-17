@@ -8,10 +8,9 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
 	/**
-	 * Show the profile for the given user.
+	 * Display view home
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @return view home
 	 */
 	public function index()
 	{
